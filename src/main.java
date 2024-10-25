@@ -4,5 +4,6 @@ public class main {
         System.out.println("Hello CHA");
         System.out.println("What's up");
         int x = 3;
+        int y = 6;
     }
 }
