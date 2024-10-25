@@ -6,5 +6,6 @@ public class main {
         System.out.println("yo");
         int x = 3;
         int y = 6;
+        int z = 12;
     }
 }
