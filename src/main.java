@@ -3,6 +3,7 @@ public class main {
         System.out.println("Hello world");
         System.out.println("Hello CHA");
         System.out.println("What's up");
+        System.out.println("yo");
         int x = 3;
         int y = 6;
     }
