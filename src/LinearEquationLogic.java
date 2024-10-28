@@ -54,7 +54,7 @@ public class LinearEquationLogic {
         int index = coordinate1.indexOf(",");
         x1 = Integer.parseInt(coordinate1.substring(1,index));
         int length = coordinate1.length();
-        y1 = Integer.parseInt(coordinate1.substring(index + 1, length - 1));
+        y1 = Integer.parseInt(coordinate1.substring(index + 2, length - 1));
 
 
         System.out.print("Enter coordinate 2:");
@@ -62,7 +62,7 @@ public class LinearEquationLogic {
         int index2 = coordinate2.indexOf(",");
         x2 = Integer.parseInt(coordinate2.substring(1,index2));
         int length2 = coordinate2.length();
-        y2 = Integer.parseInt(coordinate2.substring(index2 + 1, length2 - 1));
+        y2 = Integer.parseInt(coordinate2.substring(index2 + 2, length2 - 1));
     }
 
 

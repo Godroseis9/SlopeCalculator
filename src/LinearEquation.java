@@ -64,7 +64,7 @@ public class LinearEquation {
             if (yIntercept() == 0) {
                 return "y = " + "-x";
             } else if (yIntercept() < 0) {
-                return  "y = " + "-x " + roundedToHundredth(yIntercept());
+                return  "y = " + "-x - " + Math.abs(roundedToHundredth(yIntercept()));
             } else {
                 return  "y = " + "-x + " + roundedToHundredth(yIntercept());
             }
@@ -72,7 +72,7 @@ public class LinearEquation {
             if (yIntercept() == 0) {
                 return  "y = " + "x";
             } else if (yIntercept() < 0) {
-                return  "y = " + "x " + roundedToHundredth(yIntercept());
+                return  "y = " + "x - " + Math.abs(roundedToHundredth(yIntercept()));
             } else {
                 return  "y = " + "x + " + roundedToHundredth(yIntercept());
             }
@@ -80,7 +80,7 @@ public class LinearEquation {
             if (yIntercept() == 0) {
                 return "y = " + (int) slope() + "x";
             } else if (yIntercept() < 0) {
-                return "y = " + (int) slope() + "x " + roundedToHundredth(yIntercept());
+                return "y = " + (int) slope() + "x - " + Math.abs(roundedToHundredth(yIntercept()));
             } else {
                 return "y = " + (int) slope() + "x + " + roundedToHundredth(yIntercept());
             }
@@ -89,7 +89,7 @@ public class LinearEquation {
                 if (yIntercept() == 0) {
                     return "y = " + Math.abs(top) + "/" + Math.abs(bottom) + "x";
                 } else if (yIntercept() < 0) {
-                    return "y = " + Math.abs(top) + "/" + Math.abs(bottom) + "x " + roundedToHundredth(yIntercept());
+                    return "y = " + Math.abs(top) + "/" + Math.abs(bottom) + "x - " + Math.abs(roundedToHundredth(yIntercept()));
                 } else {
                     return "y = " + Math.abs(top) + "/" + Math.abs(bottom) + "x + " + roundedToHundredth(yIntercept());
                 }
@@ -97,7 +97,7 @@ public class LinearEquation {
                 if (yIntercept() == 0) {
                     return "y = " + "-" + top + "/" + Math.abs(bottom) + "x";
                 } else if (yIntercept() < 0) {
-                    return "y = " + "-" + top + "/" + Math.abs(bottom) + "x " + roundedToHundredth(yIntercept());
+                    return "y = " + "-" + top + "/" + Math.abs(bottom) + "x - " + Math.abs(roundedToHundredth(yIntercept()));
                 } else {
                     return "y = " + "-" + top + "/" + Math.abs(bottom) + "x + " + roundedToHundredth(yIntercept());
                 }
@@ -105,7 +105,7 @@ public class LinearEquation {
             if (yIntercept() == 0) {
                 return "y = " + top + "/" + bottom + "x";
             } else if (yIntercept() < 0) {
-                return "y = " + top + "/" + bottom + "x " + roundedToHundredth(yIntercept());
+                return "y = " + top + "/" + bottom + "x - " + Math.abs(roundedToHundredth(yIntercept()));
             }else {
                 return "y = " + top + "/" + bottom + "x + " + roundedToHundredth(yIntercept());
             }
