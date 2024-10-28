@@ -54,10 +54,62 @@ public class LinearEquation {
 
 
     public String equation() {
+        int top = (y2 - y1);
+        int bottom = (x2 - x1);
+
         if (y1 == y2) {
             return "y = " + yIntercept();
         }
-        return "y = " + slope() + "x + " + yIntercept();
+        if (slope() == -1 ) {
+            if (yIntercept() == 0) {
+                return "y = " + "-x";
+            } else if (yIntercept() < 0) {
+                return  "y = " + "-x " + roundedToHundredth(yIntercept());
+            } else {
+                return  "y = " + "-x + " + roundedToHundredth(yIntercept());
+            }
+        } else if (slope() == 1){
+            if (yIntercept() == 0) {
+                return  "y = " + "x";
+            } else if (yIntercept() < 0) {
+                return  "y = " + "x " + roundedToHundredth(yIntercept());
+            } else {
+                return  "y = " + "x + " + roundedToHundredth(yIntercept());
+            }
+        } else if (top % bottom == 0) {
+            if (yIntercept() == 0) {
+                return "y = " + (int) slope() + "x";
+            } else if (yIntercept() < 0) {
+                return "y = " + (int) slope() + "x " + roundedToHundredth(yIntercept());
+            } else {
+                return "y = " + (int) slope() + "x + " + roundedToHundredth(yIntercept());
+            }
+        } else {
+            if ((top <= -1) & (bottom <= -1)) {
+                if (yIntercept() == 0) {
+                    return "y = " + Math.abs(top) + "/" + Math.abs(bottom) + "x";
+                } else if (yIntercept() < 0) {
+                    return "y = " + Math.abs(top) + "/" + Math.abs(bottom) + "x " + roundedToHundredth(yIntercept());
+                } else {
+                    return "y = " + Math.abs(top) + "/" + Math.abs(bottom) + "x + " + roundedToHundredth(yIntercept());
+                }
+            } else if ((top <= -1) || (bottom <= -1)) {
+                if (yIntercept() == 0) {
+                    return "y = " + "-" + top + "/" + Math.abs(bottom) + "x";
+                } else if (yIntercept() < 0) {
+                    return "y = " + "-" + top + "/" + Math.abs(bottom) + "x " + roundedToHundredth(yIntercept());
+                } else {
+                    return "y = " + "-" + top + "/" + Math.abs(bottom) + "x + " + roundedToHundredth(yIntercept());
+                }
+            }
+            if (yIntercept() == 0) {
+                return "y = " + top + "/" + bottom + "x";
+            } else if (yIntercept() < 0) {
+                return "y = " + top + "/" + bottom + "x " + roundedToHundredth(yIntercept());
+            }else {
+                return "y = " + top + "/" + bottom + "x + " + roundedToHundredth(yIntercept());
+            }
+        }
     }
 
 
@@ -65,7 +117,7 @@ public class LinearEquation {
 
     public String coordinateForX(double x) {
         double yValue = (slope() * x) + yIntercept();
-        return "The point on the line is (" + x + ", " + yValue + ")";
+        return "The point on the line is (" + roundedToHundredth(x) + ", " + roundedToHundredth(yValue) + ")";
     }
 
 
@@ -80,8 +132,8 @@ public class LinearEquation {
             System.out.println();
             System.out.println("The two points are " + "(" + x1 + ", " + y1 + ") and (" + x2 + ", " + y2 + ")");
             System.out.println("The equation of the line between these points is: " + equation());
-            System.out.println("The y-intercept of this line is: " + yIntercept());
-            System.out.println("The slope of this line is: " + slope());
+            System.out.println("The y-intercept of this line is: " + roundedToHundredth(yIntercept()));
+            System.out.println("The slope of this line is: " + roundedToHundredth(slope()));
             System.out.println("The distance between these points is " + distance());
             System.out.println();
         }
